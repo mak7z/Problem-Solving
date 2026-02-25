@@ -22,20 +22,25 @@ stInfo ReadInfo() {
 }
 
 
-bool TheCheckAgeIfWasGreaterThan21(stInfo Info)
+bool IsAdult(stInfo Info)
 {
-	return (Info.Age > 21);
+	return Info.Age > 21;
 }
 
-bool CheckDrivingLicense(stInfo Info)
+bool HasLicense(stInfo Info)
 {
-	return (Info.HasDrivingLicense == true);
+	return Info.HasDrivingLicense;
+}
+
+bool IsAccepted(stInfo Info)
+{
+	return IsAdult(Info) && HasLicense(Info);
 }
 
 void PrintResult(stInfo Info)
 {
 	cout << "-------------------------\n";
-	if (TheCheckAgeIfWasGreaterThan21(Info) && CheckDrivingLicense(Info))
+	if (IsAccepted(Info))
 	{
 		cout << "\nHired \n";
 	}
@@ -49,5 +54,4 @@ int main()
 {
 	PrintResult(ReadInfo());
 }
-
 
