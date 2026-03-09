@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 
@@ -39,4 +38,5 @@ int main()
 	int Num1, Num2 , Num3;
 	ReadNumbers(Num1, Num2, Num3);
 	PrintResults(MaxOf3Numbers(Num1, Num2 , Num3));
+
 }
